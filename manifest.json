@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Female Artist Filter",
+    "version": "1.0",
+    "icons": {
+        "128": "/torah-svgrepo-com.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": ["tabs", "storage", "webNavigation", "activeTab"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [{
+        "matches": ["https://*.youtube.com/*"],
+        "js": ["contentscript.js"]
+    }]
+}
