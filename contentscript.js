@@ -29,7 +29,7 @@ chrome.storage.sync.get('artists', function(data) {
     }
 })
 setInterval(function() {
-    const artist = document.querySelector("#layout > ytmusic-player-bar > div.middle-controls.style-scope.ytmusic-player-bar > div.content-info-wrapper.style-scope.ytmusic-player-bar > span > span.subtitle.style-scope.ytmusic-player-bar > yt-formatted-string > a:nth-child(1)").innerText;
+    const artist = document.querySelector("#layout > ytmusic-player-bar > div.middle-controls.style-scope.ytmusic-player-bar > div.content-info-wrapper.style-scope.ytmusic-player-bar > span > span.subtitle.style-scope.ytmusic-player-bar > yt-formatted-string > a:nth-child(1)")?.innerText;
     chrome.storage.sync.get('artists', function(data) {
         console.log(artist)
         if (data.artists.includes(artist)) {
@@ -40,3 +40,7 @@ setInterval(function() {
         }
     })
 }, 1000)
+
+// const items = document.querySelector("#contents > ytmusic-carousel-shelf-renderer:nth-child(1) > div:last-child").querySelector('#items')
+// console.log(items)
+// items.children[0].remove()
